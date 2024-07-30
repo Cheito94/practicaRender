@@ -1,0 +1,30 @@
+<table class="table table-bordered table-striped table-hover">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>NOMBRE</th>
+            <th>DIRECCIÓN</th>
+            <th>TELÉFONO</th>
+            <th>ACCIONES</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            {% for cineTemporal in cines %}
+                <td>{{ cineTemporal.id }}</td>
+                <td>{{ cineTemporal.nombre }}</td>
+                <td>{{ cineTemporal.direccion }}</td>
+                <td>{{ cineTemporal.telefono }}</td>
+                <td class="text-center">
+                    <a href="" class="btn btn-outline-warning btn-circle"
+                    title="Editar Cine">
+                        <i class="fas fa-pencil"></i>
+                    </a>
+                    <a href="" onclick="return confirm('¿Estás seguro?');" class="btn btn-outline-danger btn-circle">
+                        <i class="fas fa-trash"> </i>
+                    </a>
+                </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>

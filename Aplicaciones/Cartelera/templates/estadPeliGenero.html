@@ -1,0 +1,21 @@
+{% extends "./plantilla.html" %}
+{% load static %}
+{% block body %}
+
+<div>
+    <h1>Ejemplo Chart.js</h1>
+</div>
+<div>
+    <h1>Total de población de las parroquias del Cantón Latacunga</h1>
+</div>
+
+<body>
+    
+    <div>
+        <hr>
+        <canvas id="myChart"></canvas>
+    </div>
+    <script src="{% static 'cineUTC/static/js/app.js' %}"></script>
+</body>
+
+{% endblock %}
