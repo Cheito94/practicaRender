@@ -30,7 +30,7 @@ SECRET_KEY = 'django-insecure-141zpd8_h0ommabnt(rgajleccxn3=6d9u@me-2cex35ej(xi1
 DEBUG = True
 
 #REFERENCIA AL DOMINIO QUE OBTENDREMOS CUANDO SE DESPLIEGUE EL PROYECTO.
-ALLOWED_HOSTS = os.getenv('ALLOWED_HOSTS', '').split(',')
+ALLOWED_HOSTS = os.getenv('ALLOWED_HOSTS', 'cineutc-x1j8.onrender.com').split(',')
 
 
 # Application definition
