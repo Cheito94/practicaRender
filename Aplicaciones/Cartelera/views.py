@@ -9,14 +9,15 @@ def home(request):
 
 #RENDERIZANDO EL TEMPLATE
 #listadoGeneros
+# Renderizando el template de ListadoGenero
 def listadoGeneros(request):
     generosBdd = Genero.objects.all()
+    # Contar descripciones por cada género
     genero_counts = Counter([genero.nombre for genero in generosBdd])
     context = {
         'generos': generosBdd,
-        'nombres': list(genero_counts.keys()),
-        'descripciones': list(genero_counts.values())
-        
+        'nombres': list(genero_counts.keys()), # Nombres de los géneros
+        'descripciones_count': list(genero_counts.values()) # Conteo de descripciones por género
     }
     return render(request, 'listadoGeneros.html', context)
 
