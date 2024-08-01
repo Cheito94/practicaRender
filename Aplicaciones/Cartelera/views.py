@@ -1,3 +1,4 @@
+from typing import Counter
 from django.http import JsonResponse
 from django.shortcuts import render, redirect
 from .models import Genero,Pelicula,Director,Pais,Cine
@@ -10,12 +11,12 @@ def home(request):
 #listadoGeneros
 def listadoGeneros(request):
     generosBdd = Genero.objects.all()
-    nombres = [genero.nombre for genero in generosBdd]
-    descripciones = [genero.descripcion for genero in generosBdd]
+    genero_counts = Counter([genero.nombre for genero in generosBdd])
     context = {
         'generos': generosBdd,
-        'nombres': nombres,
-        'descripciones': descripciones
+        'nombres': list(genero_counts.keys()),
+        'descripciones': list(genero_counts.values())
+        
     }
     return render(request, 'listadoGeneros.html', context)
 
